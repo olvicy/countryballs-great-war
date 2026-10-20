@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Countryballs: Велика війна</title>
+    <link rel="icon" type="image/png" href="countryballs/germany.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <section class="welcome-screen">
+
+            <div class="title-badge">🌍 COUNTRYBALLS</div>
+
+            <h1>ВЕЛИКА ВІЙНА</h1>
+
+            <p class="subtitle">
+                Хто з ким? Перевір себе в трьох веселих іграх!
+            </p>
+
+            <p class="intro">
+                Європа 1914–1918 років поділилася на військові блоки.
+                Твоє завдання — навчитися розрізняти країни
+                Антанти та її союзників, Центральних держав
+                і нейтральні країни.
+            </p>
+
+
+            <section class="preview">
+
+    <h2 style="font-size: 1.25rem; margin-bottom: 12px;">
+        🌍 Європа у Великій війні: три табори
+    </h2>
+
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        align-items: stretch;
+    ">
+
+        <!-- АНТАНТА -->
+        <section style="
+            min-width: 0;
+            padding: 10px 7px;
+            border-radius: 16px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        ">
+
+            <h3 style="
+                margin: 0 0 8px;
+                min-height: 2.2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                line-height: 1.15;
+                color: #1d4ed8;
+            ">
+                🔵 Антанта та союзники
+            </h3>
+
+            <div class="country-grid" style="
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 5px;
+            ">
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/great-britain.png"
+                        alt="Велика Британія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Велика Британія</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/france.png"
+                        alt="Франція"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Франція</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/russian-empire.png"
+                        alt="Російська імперія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Російська імперія</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ЦЕНТРАЛЬНІ ДЕРЖАВИ -->
+        <section style="
+            min-width: 0;
+            padding: 10px 7px;
+            border-radius: 16px;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        ">
+
+            <h3 style="
+                margin: 0 0 8px;
+                min-height: 2.2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                line-height: 1.15;
+                color: #b91c1c;
+            ">
+                🔴 Центральні держави
+            </h3>
+
+            <div class="country-grid" style="
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 5px;
+            ">
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/germany.png"
+                        alt="Німецька імперія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Німецька імперія</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/austria-hungary.png"
+                        alt="Австро-Угорщина"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Австро-Угорщина</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/ottoman-empire.png"
+                        alt="Османська імперія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Османська імперія</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- НЕЙТРАЛЬНІ КРАЇНИ -->
+        <section style="
+            min-width: 0;
+            padding: 10px 7px;
+            border-radius: 16px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        ">
+
+            <h3 style="
+                margin: 0 0 8px;
+                min-height: 2.2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                line-height: 1.15;
+                color: #15803d;
+            ">
+                🟢 Нейтральні країни
+            </h3>
+
+            <div class="country-grid" style="
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 5px;
+            ">
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/switzerland.png"
+                        alt="Швейцарія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Швейцарія</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/netherlands.png"
+                        alt="Нідерланди"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Нідерланди</div>
+                </div>
+
+                <div class="country-card" style="
+                    min-width: 0;
+                    padding: 5px 3px;
+                    border-radius: 10px;
+                    font-size: 0.7rem;
+                    line-height: 1.15;
+                    overflow-wrap: anywhere;
+                ">
+                    <img
+                        src="countryballs/spain.png"
+                        alt="Іспанія"
+                        style="width: 56px; height: 56px; margin: 0 auto 5px;"
+                    >
+                    <div>Іспанія</div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</section>
+
+
+            <div class="games-preview">
+
+                <div class="game-card">
+                    <span class="game-icon">🎯</span>
+                    <strong>ВОГОНЬ!</strong>
+                    <small>Влучай у противників</small>
+                </div>
+
+                <div class="game-card" id="matchCard">
+                    <span class="game-icon">🧩</span>
+                    <strong>ТРИ В РЯД</strong>
+                    <small>Створюй комбінації</small>
+                </div>
+
+                <div class="game-card">
+                    <span class="game-icon">🐦</span>
+                    <strong>РОЗСОРТУЙ!</strong>
+                    <small>Розклади по таборах</small>
+                </div>
+
+            </div>
+
+
+            <button id="startButton" class="start-button">
+                <span class="play-icon">▶</span>
+                <span>Розпочати</span>
+            </button>
+            <p class="creator-credit">Created by Olga Gerinburg</p>
+
+        </section>
+        <section id="gameMenu" class="game-menu">
+
+            <div class="title-badge">🌍 COUNTRYBALLS</div>
+
+            <h2>ВЕЛИКА ВІЙНА</h2>
+
+            <p class="menu-subtitle">
+                Обирай гру та перевір свої знання!
+            </p>
+
+
+            <div class="game-menu-grid">
+
+                <button class="menu-game-card fire-card">
+                    <span class="menu-game-icon">🎯</span>
+
+                    <strong>ВОГОНЬ!</strong>
+
+                    <small>
+                        Влучай у противників,
+                        але не зачепи союзників
+                        і нейтральні країни.
+                    </small>
+                </button>
+
+
+                <button class="menu-game-card match-card">
+                    <span class="menu-game-icon">🧩</span>
+
+                    <strong>ТРИ В РЯД</strong>
+
+                    <small>
+                        Створюй комбінації з країн,
+                        які належать до одного табору.
+                    </small>
+                </button>
+
+
+                <button class="menu-game-card sort-card">
+                    <span class="menu-game-icon">🐦</span>
+
+                    <strong>РОЗСОРТУЙ!</strong>
+
+                    <small>
+                        Розклади Countryballs
+                        по правильних таборах.
+                    </small>
+                </button>
+
+            </div>
+
+        </section>
+            <section id="fireGame" class="game-screen">
+
+                <div
+                    class="match-task-overlay"
+                    id="fireStartOverlay"
+                    style="display: none;"
+                >
+                    <div class="match-task-overlay-card">
+
+                            <div class="match-task-overlay-title">
+                                🎮 Підготуйся до гри
+                            </div>
+
+                            <div class="match-task-overlay-subtitle">
+                                Прочитай правила:
+                            </div>
+
+                            <div class="match-task-overlay-text">
+
+                            <div class="match-difficulty-info">
+
+                                <div class="match-difficulty-level">
+                                    <strong>Влучай в противників:</strong>
+                                    <span>+20 балів за Антанту</span>
+                                </div>
+
+                                <div class="match-difficulty-level">
+                                    <strong>Оминай нейтральні країни:</strong>
+                                    <span>−5 балів за влучання</span>
+                                </div>
+
+                                <div class="match-difficulty-level">
+                                    <strong>Не стріляй у союзників:</strong>
+                                    <span>−10 балів і −1 ❤️</span>
+                                </div>
+
+                                <div class="match-difficulty-level">
+                                    <strong>Ухиляйся від бомб:</strong>
+                                    <span>−1 ❤️</span>
+                                </div>
+
+                            </div>
+
+                            <p class="fire-start-hint">
+                                ❤️ У тебе 10 життів. Рівень складності можна змінювати
+                                навіть під час гри повзунком у верхній панелі.
+                            </p>
+
+                            <div class="match-task-overlay-subtitle">
+                                Обери рівень складності:
+                            </div>
+
+                            <div class="fire-difficulty-options">
+
+                                <button type="button"
+                                    class="fire-difficulty-button"
+                                    data-fire-difficulty="1">
+                                    1
+                                </button>
+
+                                <button type="button"
+                                    class="fire-difficulty-button"
+                                    data-fire-difficulty="2">
+                                    2
+                                </button>
+
+                                <button type="button"
+                                    class="fire-difficulty-button selected"
+                                    data-fire-difficulty="3">
+                                    3
+                                </button>
+
+                                <button type="button"
+                                    class="fire-difficulty-button"
+                                    data-fire-difficulty="4">
+                                    4
+                                </button>
+
+                                <button type="button"
+                                    class="fire-difficulty-button"
+                                    data-fire-difficulty="5">
+                                    5
+                                </button>
+
+                            </div>
+
+                            <div class="fire-start-level-label">
+                                Рівень 3 — середній
+                            </div>
+
+                        </div>
+
+                        <div class="match-task-overlay-actions">
+
+                            <button
+                                type="button"
+                                id="fireStartButton"
+                                class="match-task-overlay-button"
+                            >
+                                <span class="result-button-icon">▶️</span>
+                                <span>Почати гру</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                id="fireStartBackButton"
+                                class="match-task-overlay-button"
+                            >
+                                <span class="result-button-icon">🏠</span>
+                                <span>До всіх ігор</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            <div class="game-topbar">
+                <div class="game-topbar-actions">
+
+                <button id="backToMenu" class="game-control">
+                    🏠 Меню
+                </button>
+
+                <button
+                    type="button"
+                    class="game-control game-sound-toggle"
+                    aria-pressed="true"
+                    title="Вимкнути звук"
+                >
+                    🔊 Звук
+                </button>
+
+                <button
+                    id="fireRestartCurrentButton"
+                    class="game-control game-restart-current"
+                    type="button"
+                    title="Почати заново"
+                    aria-label="Почати гру заново"
+                >
+                    🔄 Заново
+                </button>
+                </div>
+
+                <div class="game-title">
+                    🎯 ВОГОНЬ!
+                </div>
+
+                <div class="game-stats">
+                    <span>⭐ <b id="fireScore">0</b></span>
+                    <span>❤️ <b id="fireLives">3</b></span>
+                </div>
+
+                <div class="game-tempo">
+                    <label for="fireTempo">Рівень</label>
+                    <input
+                        type="range"
+                        id="fireTempo"
+                        min="1"
+                        max="5"
+                        value="3"
+                        step="1"
+                    >
+                    <span id="fireTempoValue">3</span>
+                </div>
+
+            </div>
+  
+            <div class="game-play-layout">
+
+            <aside
+                class="country-reference-panel"
+                id="fireCountryReference"
+            ></aside>
+
+            <div class="fire-field" id="fireField">
+
+                <div class="fire-message" id="fireMessage">
+                    Влучай у противників!
+                </div>
+
+
+                <div class="player-ball" id="playerBall">
+
+                    <img
+                        src="countryballs/germany.png"
+                        alt="Німецька імперія"
+                    >
+
+                </div>
+
+                <div class="enemy-ball enemy-1">                
+                    <img src="countryballs/great-britain.png" alt="Велика Британія">
+                </div>
+
+
+                <div class="enemy-ball enemy-2">
+                    <img src="countryballs/france.png" alt="Франція">
+                </div>
+
+                <div class="enemy-ball enemy-3">
+                    <img src="countryballs/russian-empire.png" alt="Російська імперія">
+                </div>
+
+                <div class="enemy-ball enemy-4">
+                    <img src="countryballs/austria-hungary.png" alt="Австро-Угорщина">
+                </div>
+
+                <div class="aimline" id="aimLine"></div>
+                <div class="bullet" id="bullet"></div>
+                <div class="hit-label" id="hitLabel"></div>
+                <div class="fire-game-over" id="fireGameOver">
+                    <div class="fire-game-over-card">
+                        <div class="fire-game-over-title">
+                            💥 Гру завершено!
+                        </div>
+                          
+                        <div class="fire-game-over-reason">
+                                Ти втратив усі 10 сердець!
+                        </div>
+
+                        <div class="fire-game-over-score">
+                            ⭐ <b id="fireFinalScore">0</b> балів
+                        </div>
+
+                        <div class="fire-game-over-actions">
+                            <button
+                                id="fireRestartButton"
+                                class="fire-result-button"
+                            >
+                                <span class="result-button-icon">🔄</span>
+                                <span>Спробувати ще раз</span>
+                            </button>
+
+                            <button
+                                id="fireMenuButton"
+                                class="fire-result-button"
+                            >
+                                <span class="result-button-icon">🏠</span>
+                                <span>До меню</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </section>
+        
+        <section id="matchGame" class="game-screen">
+
+            <div class="game-topbar">
+                <div class="game-topbar-actions">
+                <button id="matchBackToMenu" class="game-control">
+                    🏠 Меню
+                </button>
+
+                <button
+                    type="button"
+                    class="game-control game-sound-toggle"
+                    aria-pressed="true"
+                    title="Вимкнути звук"
+                >
+                    🔊 Звук
+                </button>
+
+                <button
+                    id="matchRestartCurrentButton"
+                    class="game-control game-restart-current"
+                    type="button"
+                    title="Почати заново"
+                    aria-label="Почати гру заново"
+                >
+                    🔄 Заново
+                </button>
+                </div>
+
+                <div class="game-title">
+                    🧩 ТРИ В РЯД
+                </div>
+
+                <div class="game-stats">
+
+                    <span>⭐ <b id="matchScore">0</b></span>
+
+                    <span>🔥 <b id="matchCombos">0</b></span>
+
+                    <span>🔀 <b id="matchMoves">0</b></span>
+
+                    <button
+                        id="matchHintButton"
+                        class="match-hint-button"
+                        type="button"
+                    >
+                        💡 <b id="matchHints">3</b>
+                    </button>
+
+                </div>
+
+                <div class="game-tempo">
+                    <label for="matchTempo">Рівень</label>
+                    <input
+                        type="range"
+                        id="matchTempo"
+                        min="1"
+                        max="5"
+                        value="3"
+                        step="1"
+                    >
+                    <span id="matchTempoValue">3</span>
+                </div>
+            </div>
+
+            <div class="game-play-layout">
+
+            <aside
+                class="country-reference-panel"
+                id="matchCountryReference"
+            ></aside>
+
+            <div class="match-field" id="matchField">
+
+            <div class="match-message">
+                Створюй трійки з одного табору!
+            </div>
+
+            <div class="match-task" id="matchTask">
+
+                <div class="match-task-number" id="matchTaskNumber">
+                    Завдання 1/3
+                </div>
+
+                <div class="match-task-text" id="matchTaskText">
+                    🎯 Створи 3 комбо з країн Антанти та її союзників
+                </div>
+
+                <div class="match-task-progress">
+                    <span id="matchTaskProgress">0 / 3</span>
+                </div>
+
+            </div>
+
+                <div class="match-task-overlay" id="matchTaskOverlay">
+
+                    <div class="match-task-overlay-card">
+
+                        <div class="match-task-overlay-title" id="matchTaskOverlayTitle">
+                            🎉 Завдання виконано!
+                        </div>
+
+                        <div class="match-task-overlay-subtitle" id="matchTaskOverlaySubtitle">
+                            Наступне завдання
+                        </div>
+
+                        <div class="match-task-overlay-text" id="matchTaskOverlayText">
+                            🎯 Створи 2 комбо з країн Центральних держав
+                        </div>
+
+                        <div class="match-task-overlay-actions">
+
+                           <button
+                                id="matchStartGameButton"
+                                class="match-task-overlay-button"
+                            >
+                                <span class="result-button-icon">▶️</span>
+                                <span>Почати гру</span>
+                            </button> 
+                            
+                            <button
+                                id="matchRestartButton"
+                                class="match-task-overlay-button"
+                            >
+                                <span class="result-button-icon">🔄</span>
+                                <span>Грати ще раз</span>
+                            </button>
+
+                            <button
+                                id="matchBackToGamesButton"
+                                class="match-task-overlay-button"
+                            >
+                                <span class="result-button-icon">🏠</span>
+                                <span>До всіх ігор</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+           <div
+                class="match-country-notification"
+                id="matchCountryNotification"
+            >
+            </div>
+
+            <div class="match-board" id="matchBoard"></div>
+
+            </div>
+
+            </div>      
+
+        </section>
+
+                </section>
+
+        <!-- ГРА 3: РОЗСОРТУЙ! -->
+        <section id="sortGame" class="game-screen">
+
+            <div class="game-topbar">
+            <div class="game-topbar-actions">
+
+            <button
+                id="sortBackToMenu"
+                class="game-control"
+                type="button"
+            >
+                🏠 Меню
+            </button>
+
+            <button
+                type="button"
+                class="game-control game-sound-toggle"
+                aria-pressed="true"
+                title="Вимкнути звук"
+            >
+                🔊 Звук
+            </button>
+
+            <button
+                id="sortRestartCurrentButton"
+                class="game-control game-restart-current"
+                type="button"
+                title="Почати заново"
+                aria-label="Почати гру заново"
+            >
+                🔄 Заново
+            </button>
+            </div>
+
+            <div class="game-title">
+                🐦 РОЗСОРТУЙ!
+            </div>
+
+            <div class="game-stats">
+
+                <span>🔀 <b id="sortMoves">0</b></span>
+
+                <button
+                    type="button"
+                    id="sortAddBranchButton"
+                    class="sort-branch-help-button"
+                    title="Додати вільну гілку"
+                    aria-label="Додати вільну гілку"
+                >
+                    <span aria-hidden="true">🌿</span>
+                    <b id="sortExtraBranchesCount">2</b>
+                </button>
+
+                <button
+                    id="sortHintButton"
+                    class="match-hint-button"
+                    type="button"
+                    title="Показати підказку"
+                >
+                    💡 <b id="sortHints">3</b>
+                </button>
+
+            </div>
+
+            <div class="game-tempo">
+                <label for="sortTempo">Рівень</label>
+
+                <input
+                    type="range"
+                    id="sortTempo"
+                    min="1"
+                    max="5"
+                    value="3"
+                    step="1"
+                    disabled
+                    aria-label="Поточний рівень складності"
+                >
+
+                <span id="sortCurrentLevel">3</span>
+            </div>
+
+        </div>
+
+            <div
+                class="sort-status-message"
+                id="sortStatusMessage"
+            >
+                Розклади Countryballs по правильних таборах.
+            </div>
+         
+            
+            <div class="game-play-layout">
+
+            <aside
+                class="country-reference-panel"
+                id="sortCountryReference"
+            ></aside>
+
+            <!-- Тут відображатимуться гілки з Countryballs -->
+            <div
+                class="sort-board"
+                id="sortBoard"
+            ></div>
+
+        </div>
+
+            <!-- Стартовий екран -->
+            <div
+                class="match-task-overlay"
+                id="sortStartOverlay"
+                style="display: none;"
+            >
+
+                <div class="match-task-overlay-card">
+
+                    <div class="match-task-overlay-title">
+                        Підготуйся до сортування
+                    </div>
+
+                    <div class="match-task-overlay-subtitle">
+                        Прочитай правила гри
+                    </div>
+
+                    <div class="match-task-overlay-text">
+
+                        <div class="match-difficulty-info">
+
+                            <div class="match-difficulty-level">
+                                <strong>Переміщуй Countryballs –</strong>
+                                <span>сортуй їх за таборами.</span>
+                            </div>
+
+                            <div class="match-difficulty-level">
+                                <strong>Три табори:<br></strong>
+                                <span>
+                                    • Антанта<br>
+                                    • Центральні держави<br>
+                                    • Нейтральні країни
+                                </span>
+                            </div>
+
+                            <div class="match-difficulty-level">
+                                <strong>Використовуй вільні гілки – </strong>
+                                <span>вони допомагають комбінувати Countryballs.</span>
+                            </div>
+
+                        </div>
+
+                        <div class="match-task-overlay-subtitle">
+                            Обери рівень складності:
+                        </div>
+
+                        <div class="sort-difficulty-options">
+
+                            <button
+                                type="button"
+                                class="sort-difficulty-button"
+                                data-sort-difficulty="1"
+                            >1</button>
+
+                            <button
+                                type="button"
+                                class="sort-difficulty-button"
+                                data-sort-difficulty="2"
+                            >2</button>
+
+                            <button
+                                type="button"
+                                class="sort-difficulty-button selected"
+                                data-sort-difficulty="3"
+                            >3</button>
+
+                            <button
+                                type="button"
+                                class="sort-difficulty-button"
+                                data-sort-difficulty="4"
+                            >4</button>
+
+                            <button
+                                type="button"
+                                class="sort-difficulty-button"
+                                data-sort-difficulty="5"
+                            >5</button>
+
+                        </div>
+
+                        <div
+                            class="sort-start-level-label"
+                            id="sortStartLevelLabel"
+                        >
+                            Рівень 3 — середній
+                        </div>
+
+                    </div>
+
+                    <div class="match-task-overlay-actions">
+
+                        <button
+                            type="button"
+                            id="sortStartButton"
+                            class="match-task-overlay-button"
+                        >
+                            <span class="result-button-icon">▶️</span>
+                            <span>Почати гру</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            id="sortStartBackButton"
+                            class="match-task-overlay-button"
+                        >
+                            <span class="result-button-icon">🏠</span>
+                            <span>До всіх ігор</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Фінальний екран перемоги -->
+            <div
+                class="match-task-overlay"
+                id="sortVictoryOverlay"
+                style="display: none;"
+            >
+                <div class="match-task-overlay-card">
+
+                    <div class="match-task-overlay-title">
+                        Перемога!
+                    </div>
+
+                    <div class="match-task-overlay-subtitle">
+                        Усі Countryballs розсортовано!
+                    </div>
+
+                    <div
+                        class="match-task-overlay-text"
+                        id="sortVictoryText"
+                    >
+                        Чудова робота!
+                    </div>
+
+                    <div class="fire-game-over-actions">
+
+                        <button
+                            type="button"
+                            id="sortVictoryReplayButton"
+                            class="fire-result-button"
+                        >
+                            <span class="result-button-icon">🔄</span>
+                            <span>Спробувати ще раз</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            id="sortVictoryBackButton"
+                            class="fire-result-button"
+                        >
+                            <span class="result-button-icon">🏠</span>
+                            <span>До меню</span>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

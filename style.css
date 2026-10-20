@@ -1,0 +1,3567 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --yellow: #facc15;
+    --red: #ef4444;
+    --red-light: #fee2e2;
+    --text: #172033;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 15% 20%, #fff7c2 0, transparent 28%),
+        radial-gradient(circle at 85% 15%, #dbeafe 0, transparent 30%),
+        linear-gradient(135deg, #f8fbff, #fffdf3);
+
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    width: 100%;
+    max-width: 1200px;
+
+    padding: 35px 20px 50px;
+
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.welcome-screen {
+    text-align: center;
+}
+
+.title-badge {
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    background: var(--blue-light);
+    color: var(--blue);
+
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+h1 {
+    margin: 12px 0 5px;
+
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    margin: 10px auto 18px;
+
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+
+    font-weight: 700;
+}
+
+.intro {
+    max-width: 760px;
+
+    margin: 0 auto 35px;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    color: #4b5563;
+}
+
+
+.preview {
+    max-width: 950px;
+
+    margin: 0 auto 35px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 3px solid var(--red-light);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow);
+}
+
+.preview h2 {
+    margin: 0 0 22px;
+
+    font-size: 1.5rem;
+}
+
+
+.country-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(140px, 1fr));
+
+    gap: 18px;
+}
+
+
+.country-card {
+    padding: 14px 10px 16px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.13);
+}
+
+.country-card img {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+
+    max-width: 100%;
+
+    margin: 0 auto 10px;
+
+    object-fit: contain;
+}
+
+
+.games-preview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    max-width: 950px;
+
+    margin: 0 auto 35px;
+}
+
+.game-card {
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.game-icon {
+    font-size: 2.5rem;
+}
+
+.game-card strong {
+    font-size: 1.1rem;
+}
+
+.game-card small {
+    color: #6b7280;
+
+    font-size: 0.9rem;
+}
+
+
+.start-button {
+    border: none;
+
+    padding: 17px 42px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(135deg, #2563eb, #3b82f6);
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.3);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.4);
+}
+
+.start-button:active {
+    transform: translateY(1px);
+}
+
+
+@media (max-width: 750px) {
+
+    .country-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .games-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .app {
+        padding-top: 20px;
+    }
+
+    .preview {
+        padding: 18px;
+    }
+    /* Назва «Нідерланди» вміщується в один рядок */
+    .welcome-screen .preview > div > section:nth-child(3)
+    .country-card:nth-child(2) div {
+        font-size: 0.58rem;
+        letter-spacing: -0.2px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .country-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .country-card {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .country-card img {
+        width: 110px;
+        height: 110px;
+    }
+}
+/* =========================
+   ГОЛОВНЕ МЕНЮ ГРИ
+   ========================= */
+
+.game-menu {
+    display: none;
+
+    text-align: center;
+
+    animation: menuAppear 0.4s ease;
+}
+
+.game-menu h2 {
+    margin: 12px 0 5px;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.menu-subtitle {
+    margin: 10px auto 30px;
+
+    font-size: 1.1rem;
+
+    color: #4b5563;
+
+    font-weight: 600;
+}
+
+
+.game-menu-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.menu-game-card {
+    border: none;
+
+    padding: 30px 24px;
+
+    min-height: 260px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    color: var(--text);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    font-family: inherit;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.menu-game-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.16);
+}
+
+
+.menu-game-icon {
+    font-size: 4rem;
+
+    line-height: 1;
+}
+
+
+.menu-game-card strong {
+    font-size: 1.35rem;
+
+    font-weight: 900;
+}
+
+
+.menu-game-card small {
+    max-width: 250px;
+
+    font-size: 0.95rem;
+
+    line-height: 1.45;
+
+    color: #6b7280;
+}
+
+
+/* Кольорові акценти карток */
+
+.fire-card {
+    border-top: 6px solid #ef4444;
+}
+
+.match-card {
+    border-top: 6px solid #f59e0b;
+}
+
+.sort-card {
+    border-top: 6px solid #22c55e;
+}
+
+
+/* Анімація появи меню */
+
+@keyframes menuAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Адаптація для планшета і телефона */
+
+@media (max-width: 750px) {
+
+    .game-menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-game-card {
+        min-height: 210px;
+    }
+
+}
+/* =========================
+   ГРА «ВОГОНЬ!»
+   ========================= */
+
+.game-screen {
+    display: none;
+}
+
+.game-topbar {
+    position: relative;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    
+    margin: 0 0 18px 0;
+    }
+
+/* Назва гри завжди по центру верхньої панелі */
+
+.game-topbar > .game-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+/* Лічильники та підказки */
+
+.game-topbar > .game-stats {
+    display: flex;
+    flex: 0 0 auto;
+
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+
+    min-width: 0;
+    margin-left: auto;
+
+    white-space: nowrap;
+}
+
+/* Повзунок складності поруч із лічильниками */
+
+.game-topbar > .game-tempo {
+    display: flex;
+    flex: 0 0 auto;
+
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+
+    min-width: 0;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 24px;
+
+    white-space: nowrap;
+}
+
+.game-topbar > .game-tempo label,
+.game-topbar > .game-tempo span {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.game-topbar > .game-tempo input[type="range"] {
+    width: 85px;
+    max-width: 85px;
+    flex: 0 0 85px;
+}
+
+/* Повзунок складності не повинен виходити за край панелі */
+
+.game-topbar .game-tempo {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.game-topbar .game-tempo input[type="range"] {
+    max-width: 120px;
+}
+
+.game-control {
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.game-control:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.game-title {
+    font-size: 1.5rem;
+
+    font-weight: 900;
+}
+
+.game-stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+}
+
+.fire-field {
+    position: relative;
+
+    width: 100%;
+    max-width: 1100px;
+
+    height: 600px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #dbeafe 0%,
+            #eff6ff 70%,
+            #dcfce7 70%,
+            #bbf7d0 100%
+        );
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.fire-message {
+    position: absolute;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    font-weight: 800;
+
+    border: 3px solid #2563eb;
+    color: #1e3a8a;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    z-index: 5;
+}
+.fire-message.hit-success {
+    border: 3px solid #22c55e;
+}
+
+.fire-message.hit-neutral {
+    border: 3px solid #f59e0b;
+}
+
+.fire-message.warning-hit {
+    top: auto;
+    bottom: 72px;
+
+    z-index: 40;
+
+    padding: 12px 22px;
+
+    font-size: 1.25rem;
+
+    background: rgba(255, 235, 235, 0.98);
+
+    border: 3px solid #ef4444;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.18);
+
+    animation: warningHitPulse 0.8s ease-in-out 1;
+}
+
+@keyframes warningHitPulse {
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(0.75);
+        opacity: 0;
+    }
+
+    35% {
+        transform: translateX(-50%) scale(1.08);
+        opacity: 1;
+    }
+
+    65% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.player-ball {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    transform: translateX(-50%);
+
+    width: 100px;
+    height: 100px;
+
+    z-index: 10;
+
+    user-select: none;
+}
+
+.player-ball img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+@media (max-width: 750px) {
+
+    .fire-field {
+        height: 70vh;
+
+        min-height: 450px;
+    }
+
+    .game-title {
+        font-size: 1.2rem;
+    }
+
+    .game-control {
+        padding: 8px 12px;
+
+        font-size: 0.85rem;
+    }
+
+    .player-ball {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* Менші противники лише на мобільному */
+    .fire-field .enemy-ball {
+        width: 64px;
+        height: 64px;
+    }
+}
+.enemy-ball {
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    z-index: 8;
+
+    user-select: none;
+}
+
+.enemy-ball img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.enemy-1 {
+    top: 90px;
+    left: 18%;
+}
+
+
+.enemy-2 {
+    top: 180px;
+    left: 48%;
+}
+
+
+.enemy-3 {
+    top: 110px;
+    left: 76%;
+}
+
+.enemy-4 { 
+    top: 250px; 
+    left: 25%; 
+}
+/* Рухомі противники */
+
+.enemy-ball {
+    transition: none;
+}
+.aimline {
+    position: absolute;
+
+    width: 180px;
+    height: 4px;
+
+    background: rgba(37, 99, 235, 0.38);
+
+    border-radius: 999px;
+
+    transform-origin: left center;
+
+    pointer-events: none;
+
+    z-index: 7;
+
+    display: none;
+}
+.bullet {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    box-shadow:
+        0 0 8px rgba(0, 0, 0, 0.35);
+
+    pointer-events: none;
+
+    display: none;
+
+    z-index: 20;
+}
+/* Hit label */
+.hit-label {
+    position: absolute;
+    z-index: 30;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: white;
+    border: 3px solid #2563eb;
+    color: #1e3a8a;
+    font-size: 1.05rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: hitPop 0.9s ease-out;
+}
+
+.hit-label.hit-entente {
+    border-color: #22c55e;
+}
+
+.hit-label.hit-neutral {
+    border-color: #f59e0b;
+}
+
+@keyframes hitPop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -35%) scale(0.65);
+    }
+
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -55%) scale(1.12);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(0.98);
+    }
+
+    45% {
+        transform: translate(-50%, -53%) scale(1.02);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -90%) scale(0.95);
+    }
+}
+
+.hit-label.warning-hit-label {
+    left: 50% !important;
+    bottom: 25px !important;
+    top: auto !important;
+
+    background: rgba(255, 235, 235, 0.98);
+
+    border: 3px solid #ef4444;
+
+    color: #991b1b;
+
+    font-size: 1.2rem;
+
+    padding: 12px 22px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2);
+
+    animation:
+        warningHitLabelPop
+        0.9s
+        ease-in-out
+        1;
+
+    z-index: 40;
+}
+
+@keyframes warningHitLabelPop {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, 20px)
+            scale(0.7);
+    }
+
+    35% {
+        opacity: 1;
+        transform:
+            translate(-50%, 0)
+            scale(1.08);
+    }
+
+    65% {
+        opacity: 1;
+        transform:
+            translate(-50%, 0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(-50%, -10px)
+            scale(0.95);
+    }
+}
+
+/* Game over overlay */
+.fire-game-over {
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(4px);
+}
+
+.fire-game-over-card {
+    width: min(520px, 90%);
+    padding: 35px 30px;
+    border-radius: 28px;
+    background: white;
+    border: 4px solid #2563eb;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+    text-align: center;
+}
+
+.fire-game-over-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.fire-game-over-score {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #374151;
+    margin-bottom: 25px;
+}
+
+.fire-game-over-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.fire-result-button {
+    width: min(340px, 100%);
+    min-height: 58px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 18px;
+    background: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 5px 0 #1d4ed8;
+    transition: transform 0.15s ease;
+}
+
+.fire-result-button:hover {
+    transform: translateY(-2px);
+}
+
+.result-button-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: white;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.game-tempo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.game-tempo label {
+    white-space: nowrap;
+}
+
+.game-tempo input[type="range"] {
+    width: 110px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+#fireTempoValue {
+    min-width: 18px;
+    text-align: center;
+    font-weight: 900;
+}
+/* =========================
+   ТРИ В РЯД — поле
+   ========================= */
+
+.match-field {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            to bottom,
+            #dbeafe 0%,
+            #eff6ff 70%,
+            #dcfce7 70%,
+            #bbf7d0 100%
+        );
+    border: 4px solid white;
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.match-message {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+.match-task {
+    width: min(620px, 92%);
+    margin: 0 auto 18px;
+    padding: 16px 22px;
+
+    border-radius: 22px;
+
+    background: white;
+    border: 3px solid #2563eb;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+.match-task-number {
+    margin-bottom: 6px;
+
+    font-size: 0.82rem;
+    font-weight: 900;
+
+    color: #2563eb;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.match-task-text {
+    font-size: 1.08rem;
+    font-weight: 800;
+    line-height: 1.35;
+
+    color: #1e3a8a;
+}
+
+.match-task-progress {
+    margin: 12px auto 0;
+
+    width: min(260px, 100%);
+    height: 12px;
+
+    border-radius: 999px;
+
+    background: #dbeafe;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.match-task-progress::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    width: var(--task-progress, 0%);
+
+    border-radius: inherit;
+
+    background: #2563eb;
+
+    transition: width 0.35s ease;
+}
+
+.match-task-progress span {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    margin-top: -1px;
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    color: #1e3a8a;
+}
+
+.match-task-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.58);
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.match-task-overlay-card {
+    width: min(560px, 92%);
+
+    padding: 30px 28px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    border: 4px solid #2563eb;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    animation: matchTaskAppear 0.35s ease-out;
+    box-sizing: border-box;
+    max-height: calc(100% - 40px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.match-task-overlay-title {
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+    font-weight: 900;
+
+    color: #1e3a8a;
+}
+
+.match-task-overlay-subtitle {
+    margin-bottom: 14px;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    color: #f59e0b;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.match-task-overlay-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    color: #374151;
+}
+
+.match-task-overlay-actions {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.match-task-overlay-button {
+    width: min(340px, 100%);
+    min-height: 58px;
+    padding: 8px 20px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    box-shadow: 0 5px 0 #1d4ed8;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.match-difficulty-options {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: min(420px, 100%);
+    margin: 18px auto 0;
+}
+
+.match-difficulty-button {
+    min-height: 52px;
+    padding: 8px 10px;
+
+    border: 3px solid #f59e0b;
+    border-radius: 16px;
+
+    background: white;
+    color: #1e3a8a;
+
+    font-size: 1.1rem;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #d97706;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.match-difficulty-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d97706;
+}
+
+.match-difficulty-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d97706;
+}
+
+.match-difficulty-button.selected {
+    background: #dbeafe;
+}
+
+.match-hint-button {
+    min-width: 54px;
+    height: 30px;
+    padding: 2px 7px;
+    line-height: 1;
+
+    border: 2px solid #f59e0b;
+    border-radius: 999px;
+
+    background: #fff7ed;
+    color: #b45309;
+
+    font-size: 0.85rem;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    box-shadow: 0 2px 0 #f59e0b;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+
+    flex-shrink: 0;
+}
+
+.match-hint-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 #f59e0b;
+}
+
+.match-hint-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #f59e0b;
+}
+
+.match-hint-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+    transform: none;
+    box-shadow: 0 2px 0 #d1d5db;
+    border-color: #d1d5db;
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.match-task-overlay-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #1d4ed8;
+}
+
+.match-task-overlay-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 #1d4ed8;
+}
+
+@keyframes matchTaskAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.82);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.match-country-notification {
+    position: fixed;
+
+    z-index: 30;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 3px solid #2563eb;
+
+    color: #1e3a8a;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.18);
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    display: none;
+
+    animation: hitPop 0.7s ease-out;
+}
+
+.match-country-notification.show {
+    display: block;
+}
+
+.match-board {
+    width: min(90vw, 620px);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.65);
+    border: 3px solid white;
+    border-radius: 24px;
+
+    box-shadow:
+        inset 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.match-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 0;
+
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.match-cell img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    display: block;
+}
+.match-cell.selected {
+    outline: 4px solid #2563eb;
+    outline-offset: -4px;
+    transform: scale(1.04);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+}
+.match-cell.hint-move {
+    outline: 4px solid #f59e0b;
+    outline-offset: -4px;
+    animation: hintPulse 1s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.25);
+    }
+
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.18);
+    }
+}
+.match-cell.combo-found {
+    position: relative;
+    background: #facc15 !important;
+    transform: scale(1.08);
+    z-index: 20;
+}
+.match-cell.matched {
+    animation: matchDisappear 0.5s ease forwards;
+}
+
+@keyframes matchDisappear {
+    0% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+.match-cell.combo-found::after {
+    content: "✓";
+    position: absolute;
+    inset: 3px;
+    border: 5px solid #ef4444;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ef4444;
+    font-size: 2rem;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 30;
+}
+.fire-bomb {
+    position: absolute;
+
+    width: 18px;
+    height: 28px;
+
+    background: #303030;
+
+    border: 2px solid #171717;
+    border-radius: 45% 45% 50% 50%;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.25);
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    animation: fireBombWobble 0.45s ease-in-out infinite;
+}
+
+.fire-bomb::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -8px;
+
+    width: 3px;
+    height: 9px;
+
+    background: #3b2a1f;
+
+    transform: translateX(-50%);
+
+    border-radius: 3px;
+}
+
+.fire-bomb {
+    position: absolute;
+
+    width: 26px;
+    height: 26px;
+
+    background: #303030;
+
+    border: 3px solid #171717;
+    border-radius: 50%;
+
+    box-shadow:
+        inset -4px -4px 0 rgba(0, 0, 0, 0.18),
+        0 4px 8px rgba(0, 0, 0, 0.25);
+
+    z-index: 20;
+    pointer-events: none;
+}
+
+.fire-bomb::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -10px;
+
+    width: 4px;
+    height: 11px;
+
+    background: #6b4a2f;
+
+    transform: translateX(-50%) rotate(-12deg);
+
+    border-radius: 4px;
+}
+
+.fire-bomb::after {
+    content: "✦";
+
+    position: absolute;
+
+    left: 50%;
+    top: -23px;
+
+    color: #f59e0b;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    transform: translateX(-50%);
+
+    animation: bombSpark 0.4s ease-in-out infinite;
+}
+
+@keyframes fireBombWobble {
+
+    0%,
+    100% {
+        transform: rotate(-7deg);
+    }
+
+    50% {
+        transform: rotate(7deg);
+    }
+}
+
+@keyframes bombSpark {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform:
+            translateX(-50%)
+            scale(0.75)
+            rotate(-10deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1.25)
+            rotate(10deg);
+    }
+}
+.fire-game-over-reason {
+    margin-top: 10px;
+    margin-bottom: 14px;
+
+    padding: 10px 16px;
+
+    border-radius: 14px;
+
+    background: #fff1f2;
+    border: 2px solid #fecdd3;
+
+    color: #b91c1c;
+
+    font-size: 1.05rem;
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+.fire-bomb-warning {
+    position: absolute;
+
+    font-size: 30px;
+    line-height: 1;
+
+    z-index: 35;
+
+    pointer-events: none;
+
+    animation:
+        bombWarningPop
+        0.8s
+        ease-in-out;
+}
+
+@keyframes bombWarningPop {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 5px) scale(0.7);
+    }
+
+    35% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1.15);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -5px) scale(0.9);
+    }
+}
+/* Реакція Німеччини на влучання бомби */
+#playerBall.bomb-hit-shake {
+    animation: bombHitShake 0.5s ease-in-out;
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.95));
+}
+
+@keyframes bombHitShake {
+    0%, 100% {
+        translate: 0 0;
+        rotate: 0deg;
+    }
+
+    15% {
+        translate: -5px 0;
+        rotate: -7deg;
+    }
+
+    30% {
+        translate: 5px 0;
+        rotate: 7deg;
+    }
+
+    45% {
+        translate: -4px 0;
+        rotate: -5deg;
+    }
+
+    60% {
+        translate: 4px 0;
+        rotate: 5deg;
+    }
+
+    75% {
+        translate: -2px 0;
+        rotate: -2deg;
+    }
+}
+/* Стартовий екран гри «Вогонь!» */
+
+.fire-start-hint {
+    margin: 14px 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.fire-start-difficulty-title {
+    margin-top: 16px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.fire-difficulty-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0 8px;
+}
+
+.fire-difficulty-button {
+    min-width: 52px;
+    min-height: 52px;
+    padding: 8px 10px;
+
+    border: 3px solid #f59e0b;
+    border-radius: 16px;
+
+    background: white;
+    color: #1e3a8a;
+
+    font-size: 1.1rem;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #d97706;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.fire-difficulty-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d97706;
+}
+
+.fire-difficulty-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d97706;
+}
+
+.fire-difficulty-button.selected {
+    background: #dbeafe;
+}
+
+.fire-start-level-label {
+    text-align: center;
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+/* =========================
+   ГРА 3 — РОЗСОРТУЙ!
+   ========================= */
+
+/* Повідомлення гри «РОЗСОРТУЙ!» */
+.sort-status-message {
+    position: relative;
+
+    width: fit-content;
+    max-width: 92%;
+    box-sizing: border-box;
+
+    margin: 18px auto;
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+
+    border: 3px solid #2563eb;
+    color: #1e3a8a;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    z-index: 5;
+}
+
+/* ==========================================
+   ГРА 3 — РОЗСОРТУЙ!
+   Єдиний блок стилів
+   ========================================== */
+
+/* Ігрове поле: дві сторони та вільний центр */
+
+.sort-board {
+    position: relative;
+    isolation: isolate;
+
+    width: min(1100px, 96%);
+    margin: 24px auto;
+    padding: 12px 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 145px;
+
+    column-gap: 48px;
+    row-gap: 0;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* Центрального стовбура немає */
+
+.sort-board::before {
+    content: none;
+    display: none;
+}
+
+/* Контейнери гілок невидимі */
+
+.sort-branch {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 130px;
+    min-height: 130px;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0 2px 8px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* Ліві гілки */
+
+/* Ліві гілки: зовнішній край → до центру */
+.sort-branch:nth-child(odd) {
+    flex-direction: row;
+}
+
+/* Праві гілки: зовнішній край → до центру */
+.sort-branch:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Горизонтальна хвиляста деревина */
+
+.sort-branch::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    left: 0;
+    right: 0;
+    bottom: 8px;
+
+    width: auto;
+    height: 18px;
+
+    background:
+        repeating-linear-gradient(
+            174deg,
+            transparent 0 8px,
+            rgba(97, 59, 26, 0.18) 9px 10px,
+            transparent 11px 17px
+        ),
+        linear-gradient(
+            180deg,
+            #d8aa73 0%,
+            #b78046 45%,
+            #94602f 70%,
+            #70441f 100%
+        );
+
+    clip-path: polygon(
+        0 69%, 5% 48%, 12% 58%,
+        19% 32%, 25% 45%, 33% 22%,
+        41% 42%, 49% 28%, 57% 48%,
+        66% 25%, 74% 42%, 82% 22%,
+        90% 37%, 96% 19%, 100% 29%,
+        99% 58%, 92% 75%, 84% 58%,
+        75% 81%, 66% 63%, 57% 83%,
+        48% 65%, 39% 88%, 31% 67%,
+        23% 86%, 15% 67%, 7% 87%,
+        0 96%
+    );
+
+    filter: drop-shadow(0 2px 1px #70441f);
+
+    pointer-events: none;
+}
+
+/* Дзеркальна форма деревини для правої сторони */
+
+.sort-branch:nth-child(even)::before {
+    transform: scaleX(-1);
+}
+
+/* Сучків немає */
+
+.sort-branch::after {
+    content: none;
+    display: none;
+}
+
+/* Countryballs без білих кіл */
+
+.sort-ball {
+    position: relative;
+    z-index: 1;
+
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.sort-ball img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    border-radius: 0;
+
+    pointer-events: none;
+}
+
+/* Вибрана кулька: підсвічування без підняття */
+
+.sort-ball.selected {
+    filter: drop-shadow(
+        0 0 5px rgba(37, 99, 235, 0.9)
+    );
+}
+
+/* Вибрана та завершена гілки без рамок */
+
+.sort-branch.selected,
+.sort-branch.complete {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.sort-branch.selected::before {
+    filter:
+        drop-shadow(0 0 5px rgba(37, 99, 235, 0.9))
+        drop-shadow(0 2px 1px #70441f);
+}
+
+.sort-branch.complete::before {
+    filter:
+        drop-shadow(0 0 5px rgba(34, 197, 94, 0.9))
+        drop-shadow(0 2px 1px #70441f);
+}
+
+
+/* ==========================================
+   ВИБІР СКЛАДНОСТІ
+   ========================================== */
+
+.sort-difficulty-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin: 12px 0 8px;
+}
+
+.sort-difficulty-button {
+    min-width: 52px;
+    min-height: 52px;
+    padding: 8px 10px;
+
+    border: 3px solid #f59e0b;
+    border-radius: 16px;
+
+    background: white;
+    color: #1e3a8a;
+
+    font-size: 1.1rem;
+    font-weight: 900;
+
+    cursor: pointer;
+    box-shadow: 0 4px 0 #d97706;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.sort-difficulty-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d97706;
+}
+
+.sort-difficulty-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #d97706;
+}
+
+.sort-difficulty-button.selected {
+    background: #dbeafe;
+}
+
+.sort-start-level-label {
+    margin: 8px 0;
+
+    color: #1d4ed8;
+    font-weight: 800;
+    text-align: center;
+}
+
+#sortStartOverlay .match-difficulty-level span {
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   КНОПКА ДОПОМОГИ
+   ========================================== */
+
+.sort-game-actions {
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+}
+
+.sort-game-actions .match-task-overlay-button {
+    width: min(340px, 100%);
+}
+
+
+/* ==========================================
+   АДАПТАЦІЯ ДЛЯ ВУЗЬКИХ ЕКРАНІВ
+   ========================================== */
+
+@media (max-width: 650px) {
+
+    .sort-board {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 110px;
+
+        column-gap: 16px;
+        row-gap: 0;
+
+        padding: 8px 0;
+    }
+
+    .sort-branch {
+        height: 110px;
+        min-height: 110px;
+        padding-bottom: 8px;
+    }
+
+    .sort-branch::before {
+        height: 14px;
+        bottom: 8px;
+    }
+
+    .sort-ball {
+        width: clamp(30px, 9vw, 48px);
+        height: clamp(30px, 9vw, 48px);
+        flex-basis: clamp(30px, 9vw, 48px);
+    }
+}
+/* Компактна кнопка додаткової гілки */
+.sort-branch-help-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    min-width: 54px;
+    height: 30px;
+    padding: 2px 7px;
+
+    border: 2px solid #f59e0b;
+    border-radius: 999px;
+
+    background: white;
+    color: #1e3a8a;
+
+    font-size: 0.85rem;
+    font-weight: 900;
+    line-height: 1;
+
+    box-shadow: 0 2px 0 #d97706;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.sort-branch-help-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 #d97706;
+}
+
+.sort-branch-help-button:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #d97706;
+}
+
+.sort-branch-help-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.sort-branch-help-button span {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.sort-branch-help-button b {
+    font-size: 1.05rem;
+}
+/* Лічильник місткості гілки */
+
+.sort-branch-count {
+    position: absolute;
+    z-index: 3;
+
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 2px 7px;
+
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #1e3a8a;
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Кульки, які вибрані для переміщення */
+
+.sort-ball.selected {
+    filter: drop-shadow(
+        0 0 5px rgba(37, 99, 235, 0.95)
+    );
+}
+
+/* Кулька на внутрішньому кінці цільової гілки */
+
+.sort-ball.drop-target {
+    filter: drop-shadow(
+        0 0 6px rgba(245, 158, 11, 1)
+    );
+}
+
+/* Неправильна ціль — наприклад, інший табір */
+
+.sort-ball.drop-target-invalid {
+    filter: drop-shadow(
+        0 0 6px rgba(220, 38, 38, 0.95)
+    );
+}
+
+/* Підсвічування порожньої гілки, куди можна перемістити кульки */
+
+.sort-branch.drop-target::before {
+    filter: drop-shadow(
+        0 0 5px rgba(245, 158, 11, 0.95)
+    );
+}
+
+.sort-branch.drop-target-invalid::before {
+    filter: drop-shadow(
+        0 0 5px rgba(220, 38, 38, 0.95)
+    );
+}
+/* Лічильники гілок — поза деревиною */
+
+.sort-branch-count {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 3px 7px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+
+    font-size: 0.78rem;
+    font-weight: 900;
+    white-space: nowrap;
+
+    pointer-events: none;
+    z-index: 4;
+}
+
+.sort-branch-left .sort-branch-count {
+    left: auto;
+    right: calc(100% + 2px);
+}
+
+.sort-branch-right .sort-branch-count {
+    left: calc(100% + 8px);
+    right: auto;
+}
+
+/* Напрямок кульок: остання завжди ближче до центру */
+
+.sort-branch.sort-branch-left {
+    flex-direction: row;
+}
+
+.sort-branch.sort-branch-right {
+    flex-direction: row-reverse;
+}
+
+/* Синє виділення джерела */
+
+.sort-branch.source-selected::before {
+    filter: drop-shadow(
+        0 0 6px rgba(37, 99, 235, 0.95)
+    );
+}
+
+.sort-ball.selected {
+    filter: drop-shadow(
+        0 0 6px rgba(37, 99, 235, 1)
+    );
+}
+
+/* Помаранчева підсвітка доступної цілі */
+
+.sort-branch.drop-target::before {
+    filter: drop-shadow(
+        0 0 6px rgba(245, 158, 11, 0.95)
+    );
+}
+
+.sort-ball.drop-target {
+    filter: drop-shadow(
+        0 0 7px rgba(245, 158, 11, 1)
+    );
+}
+
+/* Червона підсвітка недоступної цілі */
+
+.sort-branch.drop-target-invalid::before {
+    filter: drop-shadow(
+        0 0 5px rgba(220, 38, 38, 0.9)
+    );
+}
+
+.sort-ball.drop-target-invalid {
+    filter: drop-shadow(
+        0 0 7px rgba(220, 38, 38, 1)
+    );
+}
+
+/* Політ Countryballs з повної гілки */
+
+.sort-branch-clearing {
+    pointer-events: none;
+}
+
+.sort-ball.clearing {
+    animation:
+        sortBallFlyAway 0.72s ease-in forwards;
+
+    animation-delay: var(--fly-delay, 0s);
+}
+
+@keyframes sortBallFlyAway {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg) scale(1);
+        filter: brightness(1);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(-10px) rotate(-5deg) scale(1.08);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-95px) rotate(18deg) scale(0.45);
+        filter: brightness(1.25) blur(2px);
+    }
+}
+
+/* Якщо в операційній системі вимкнено анімації */
+
+@media (prefers-reduced-motion: reduce) {
+    .sort-ball.clearing {
+        animation-duration: 0.25s;
+    }
+}
+/* Підказка: кульки, які потрібно перемістити */
+.sort-ball.sort-hint-move {
+    transform: translateY(-6px) scale(1.08);
+
+    filter: drop-shadow(
+        0 0 7px rgba(245, 158, 11, 1)
+    );
+}
+
+/* Підказка: кулька на місці призначення */
+.sort-ball.sort-hint-target {
+    filter: drop-shadow(
+        0 0 7px rgba(37, 99, 235, 1)
+    );
+}
+
+/* Підказка: порожня гілка призначення */
+.sort-branch.sort-hint-destination::before {
+    filter: drop-shadow(
+        0 0 7px rgba(37, 99, 235, 1)
+    );
+}
+/* Фінальний екран «РОЗСОРТУЙ!» */
+/* Текст фінального екрана */
+#sortVictoryText {
+    line-height: 1.35;
+}
+
+/* Відстань між двома реченнями */
+.sort-victory-message-second {
+    margin-top: 8px;
+}
+
+/* Відступ між текстом і кнопками */
+#sortVictoryOverlay .fire-game-over-actions {
+    margin-top: 28px;
+}
+/* =========================================
+   СПІЛЬНА ПАНЕЛЬ ДОВІДКИ ПРО КРАЇНИ
+   ========================================= */
+
+.game-play-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin: 8px 0;
+    padding: 0;
+    }
+
+/* Панель довідки */
+
+.country-reference-panel {
+    flex: 0 0 225px;
+    width: 225px;
+    max-height: min(72vh, 650px);
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    overflow: auto;
+
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.96);
+    color: #1e3a8a;
+
+    box-shadow: 0 5px 18px rgba(30, 58, 138, 0.10);
+}
+
+/* Кнопка згортання */
+
+.country-reference-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 38px;
+    padding: 8px;
+
+    border: 2px solid #bfdbfe;
+    border-radius: 10px;
+
+    background: #eff6ff;
+    color: #1e3a8a;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.country-reference-toggle:hover {
+    background: #dbeafe;
+}
+
+.country-reference-chevron {
+    font-size: 1.15rem;
+    transition: transform 0.15s ease;
+}
+
+.country-reference-panel.is-collapsed {
+    flex-basis: 46px;
+    width: 46px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.country-reference-panel.is-collapsed
+.country-reference-toggle {
+    justify-content: center;
+    padding: 7px 3px;
+}
+
+.country-reference-panel.is-collapsed
+.country-reference-toggle-label,
+.country-reference-panel.is-collapsed
+.country-reference-content {
+    display: none;
+}
+
+.country-reference-panel.is-collapsed
+.country-reference-chevron {
+    transform: rotate(180deg);
+}
+
+/* Заголовки таборів */
+
+.country-reference-group {
+    margin-top: 12px;
+}
+
+.country-reference-group-title {
+    margin: 0 0 6px;
+    padding: 5px 6px;
+
+    border-radius: 7px;
+
+    background: #eff6ff;
+    color: #1e40af;
+
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+/* Список країн */
+
+.country-reference-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.country-reference-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 36px;
+    padding: 4px 5px;
+
+    border-radius: 8px;
+
+    font-size: 0.8rem;
+    line-height: 1.25;
+}
+
+.country-reference-item:hover {
+    background: #f1f5f9;
+}
+
+.country-reference-item img {
+    display: block;
+
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+
+    object-fit: contain;
+}
+
+.country-reference-item span {
+    overflow-wrap: anywhere;
+}
+
+/* Ігрові поля праворуч від довідника */
+
+.game-play-layout > .fire-field,
+.game-play-layout > .match-field,
+.game-play-layout > .match-board,
+.game-play-layout > .sort-board {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    width: auto;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* На вузьких екранах ігрове поле розташовується над довідником */
+@media (max-width: 850px) {
+    .game-play-layout {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        margin: 8px 0;
+    }
+
+    /* На телефоні довідник розташовується після ігрового поля */
+    .country-reference-panel {
+        order: 2;
+        width: 100%;
+        max-height: 260px;
+        flex-basis: auto;
+    }
+
+    .country-reference-panel.is-collapsed {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .game-play-layout > .fire-field,
+    .game-play-layout > .match-board,
+    .game-play-layout > .sort-board {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   ДОВІДНИК КРАЇН — КОМПАКТНА СІТКА
+   ========================================= */
+
+.country-reference-panel {
+    flex: 0 0 280px;
+    width: 280px;
+
+    max-height: none;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+/* Дві колонки країн у кожному таборі */
+
+.country-reference-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px;
+}
+
+/* Компактна картка країни */
+
+.country-reference-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    min-width: 0;
+    min-height: 34px;
+    padding: 3px;
+
+    border-radius: 6px;
+
+    font-size: 0.72rem;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+/* Зменшуємо зображення, щоб помістилися назви */
+
+.country-reference-item img {
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+
+    object-fit: contain;
+}
+
+.country-reference-group {
+    margin-top: 8px;
+}
+
+.country-reference-group-title {
+    margin-bottom: 4px;
+    padding: 4px 5px;
+
+    font-size: 0.78rem;
+}
+
+/* На вузькому екрані панель теж показує всі країни,
+   а прокручуватися за потреби буде вся сторінка */
+
+@media (max-width: 850px) {
+    .country-reference-panel {
+        width: 100%;
+        flex-basis: auto;
+
+        max-height: none;
+        overflow: visible;
+    }
+
+    .country-reference-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+/* Поле «Три в ряд» праворуч від довідника */
+
+.game-play-layout > .match-field {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    .game-play-layout > .match-field {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* Плавний перехід довідника */
+#matchCountryReference {
+    transition:
+        filter 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* Поки показано екран із правилами,
+   довідник розмитий і недоступний для натискання */
+.game-play-layout:has(
+    #matchTaskOverlay:not([style*="display: none"])
+) #matchCountryReference {
+    filter: blur(4px);
+    opacity: 0.45;
+    pointer-events: none;
+    user-select: none;
+}
+/* Розмір Countryballs і гілок на великих екранах */
+
+.sort-branch {
+    height: 145px;
+    min-height: 145px;
+}
+
+.sort-ball {
+    width: 82px;
+    height: 82px;
+    flex: 0 0 82px;
+}
+
+/* Зберігаємо компактний вигляд на мобільних пристроях */
+
+@media (max-width: 650px) {
+    .sort-branch {
+        height: 110px;
+        min-height: 110px;
+    }
+
+    .sort-ball {
+        width: clamp(30px, 9vw, 48px);
+        height: clamp(30px, 9vw, 48px);
+        flex-basis: clamp(30px, 9vw, 48px);
+    }
+}
+/* Дошка «Три в ряд»: адаптація до висоти вікна */
+
+#matchBoard {
+    width: min(
+        90vw,
+        620px,
+        max(300px, calc(100vh - 310px))
+    );
+
+    max-width: 100%;
+    flex-shrink: 0;
+}
+/* Компактний довідник у грі «РОЗСОРТУЙ!» */
+
+#sortCountryReference {
+    padding: 7px;
+}
+
+#sortCountryReference .country-reference-toggle {
+    min-height: 32px;
+    padding: 5px 7px;
+}
+
+#sortCountryReference .country-reference-group {
+    margin-top: 5px;
+}
+
+#sortCountryReference .country-reference-group-title {
+    margin-bottom: 2px;
+    padding: 3px 4px;
+    font-size: 0.72rem;
+}
+
+#sortCountryReference .country-reference-list {
+    gap: 1px 2px;
+}
+
+#sortCountryReference .country-reference-item {
+    min-height: 27px;
+    padding: 1px 2px;
+    gap: 4px;
+    font-size: 0.68rem;
+}
+
+#sortCountryReference .country-reference-item img {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+}
+/* Компактне розміщення «Три в ряд»
+   для невисокого екрана ноутбука */
+
+@media (min-width: 851px) and (max-height: 800px) {
+
+    .match-message {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .match-task {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 7px 10px;
+    }
+
+    .match-task-number {
+        margin-bottom: 3px;
+        font-size: 0.82rem;
+    }
+
+    .match-task-text {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .match-task-progress {
+        margin-top: 4px;
+    }
+
+    #matchBoard {
+        width: min(90vw, 620px, calc(100vh - 350px));
+        flex-shrink: 0;
+    }
+}
+/* Резервуємо місце праворуч для лічильників гілок */
+
+@media (min-width: 851px) {
+
+    .game-play-layout > .sort-board {
+        box-sizing: border-box;
+        padding-right: 48px;
+    }
+}
+/* Стартові й інформаційні картки на невисоких екранах */
+
+@media (max-height: 800px) {
+    .match-task-overlay {
+        padding: 10px;
+    }
+
+    .match-task-overlay-card {
+        padding: 18px 22px;
+        border-radius: 22px;
+    }
+}
+/* Компактна група кнопок меню, звуку та перезапуску */
+
+.game-topbar .game-topbar-actions {
+    display: flex;
+    flex: 0 0 auto;
+
+    width: max-content;
+    max-width: 100%;
+    min-width: 0;
+
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 6px;
+}
+
+/* Кнопки не розтягуються на всю ширину */
+
+.game-topbar .game-topbar-actions > .game-control {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    white-space: nowrap;
+}
+/* Адаптація верхньої панелі для вузьких екранів */
+
+@media (max-width: 1100px) {
+    .game-topbar {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .game-topbar > .game-topbar-actions {
+        order: 1;
+    }
+
+    .game-topbar > .game-stats {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .game-topbar > .game-tempo {
+        order: 3;
+        margin-left: 0;
+    }
+
+    .game-topbar > .game-title {
+        position: static;
+        order: 4;
+
+        width: 100%;
+        transform: none;
+        text-align: center;
+    }
+}
+/* Стартовий екран на невисоких екранах ноутбуків */
+
+@media (min-width: 851px) and (max-height: 800px) {
+
+    .welcome-screen .title-badge {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+
+    .welcome-screen h1 {
+        margin: 8px 0 4px;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1;
+    }
+
+    .welcome-screen .subtitle {
+        margin: 6px auto 10px;
+        font-size: 1.05rem;
+    }
+
+    .welcome-screen .intro {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+        line-height: 1.35;
+    }
+
+    .welcome-screen .preview {
+        margin-bottom: 12px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .welcome-screen .preview h2 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .welcome-screen .country-grid {
+        gap: 10px;
+    }
+
+    .welcome-screen .country-card {
+        padding: 8px 8px 10px;
+        border-radius: 16px;
+        font-size: 0.85rem;
+    }
+
+    .welcome-screen .country-card img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 4px;
+    }
+
+    .welcome-screen .games-preview {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .welcome-screen .game-card {
+        padding: 10px;
+        border-radius: 16px;
+        gap: 4px;
+    }
+
+    .welcome-screen .game-icon {
+        font-size: 1.8rem;
+    }
+
+    .welcome-screen .game-card strong {
+        font-size: 1rem;
+    }
+
+    .welcome-screen .game-card small {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+
+    .welcome-screen .start-button {
+        padding: 12px 32px;
+        font-size: 1.05rem;
+    }
+}
+/* Однакова висота карток країн на стартовому екрані */
+
+.welcome-screen .preview .country-card {
+    box-sizing: border-box;
+    min-height: 112px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================================
+   МОБІЛЬНИЙ СТАРТОВИЙ ЕКРАН
+   ========================================= */
+
+@media (max-width: 750px) {
+
+    .welcome-screen .title-badge {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+
+    .welcome-screen h1 {
+        margin: 8px 0 4px;
+        font-size: clamp(2rem, 9vw, 2.7rem);
+        letter-spacing: -1px;
+    }
+
+    .welcome-screen .subtitle {
+        margin: 6px auto 10px;
+        font-size: 0.95rem;
+    }
+
+    .welcome-screen .intro {
+        margin: 0 auto 12px;
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+
+    /* Компактний блок трьох таборів */
+
+    .welcome-screen .preview {
+        margin-bottom: 12px;
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .welcome-screen .preview h2 {
+        margin-bottom: 8px !important;
+        font-size: 0.95rem !important;
+        line-height: 1.2;
+    }
+
+    .welcome-screen .preview > div {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+        align-items: stretch;
+    }
+
+    .welcome-screen .preview > div > section {
+        min-width: 0;
+        padding: 6px 4px !important;
+        border-radius: 10px !important;
+    }
+
+    .welcome-screen .preview > div > section h3 {
+        min-height: 3em !important;
+        margin-bottom: 5px !important;
+        font-size: 0.67rem !important;
+        line-height: 1.15 !important;
+        overflow-wrap: anywhere;
+    }
+
+    /* Країни розташовані вертикально всередині кожного табору */
+
+    .welcome-screen .preview .country-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 3px !important;
+    }
+
+    .welcome-screen .preview .country-card {
+        min-width: 0;
+        min-height: 38px;
+        padding: 3px !important;
+        gap: 4px;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        border-radius: 7px !important;
+        font-size: 0.62rem !important;
+        line-height: 1.15;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .welcome-screen .preview .country-card img {
+        width: 30px !important;
+        height: 30px !important;
+        flex: 0 0 30px;
+        margin: 0 !important;
+        object-fit: contain;
+    }
+
+    .welcome-screen .preview .country-card div {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    /* Три прев'ю ігор в один компактний ряд */
+
+    .welcome-screen .games-preview {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .welcome-screen .game-card {
+        min-width: 0;
+        padding: 8px 5px;
+        gap: 4px;
+        border-radius: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .welcome-screen .game-icon {
+        font-size: 1.5rem;
+    }
+
+    .welcome-screen .game-card strong {
+        font-size: 0.7rem;
+        line-height: 1.15;
+    }
+
+    .welcome-screen .game-card small {
+        font-size: 0.62rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .welcome-screen .start-button {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+}
+/* =========================================
+   МОБІЛЬНЕ МЕНЮ ВИБОРУ ІГОР
+   ========================================= */
+
+@media (max-width: 750px) {
+
+    .game-menu {
+        text-align: center;
+    }
+
+    .game-menu .title-badge {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+
+    .game-menu h2 {
+        margin: 8px 0 4px;
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+
+    .game-menu .menu-subtitle {
+        margin: 6px auto 12px;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    /* Компактні картки одна під одною */
+
+    .game-menu-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+
+        width: 100%;
+        max-width: 460px;
+        margin: 12px auto;
+    }
+
+    .game-menu-grid .menu-game-card {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 10px;
+
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        box-sizing: border-box;
+
+        padding: 10px 12px;
+        border-radius: 14px;
+
+        text-align: left;
+    }
+
+    .game-menu-grid .menu-game-icon {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+
+        font-size: 1.8rem;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .game-menu-grid .menu-game-card strong {
+        grid-column: 2;
+        grid-row: 1;
+
+        font-size: 0.9rem;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    .game-menu-grid .menu-game-card small {
+        grid-column: 2;
+        grid-row: 2;
+
+        font-size: 0.75rem;
+        line-height: 1.25;
+        text-align: left;
+        text-wrap: balance;
+        min-height: 2.4em;  
+    }
+}
+/* Вирівнювання опису рівнів у грі «Три в ряд» */
+/* Центруємо блок рівнів, зберігаючи вирівнювання тексту */
+
+#matchTaskOverlay .match-difficulty-info {
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+}
+
+#matchTaskOverlay .match-difficulty-level {
+    text-align: left;
+    justify-content: flex-start;
+}
+/* Відступ між кнопками рівнів і поясненням у «Три в ряд» */
+#matchTaskOverlay #matchStartLevelLabel {
+    margin-top: 10px;
+}
+/* =========================================
+   МОБІЛЬНІ ЕКРАНИ З ПРАВИЛАМИ
+   ========================================= */
+
+@media (max-width: 750px) {
+
+    .match-task-overlay {
+        position: fixed;
+        inset: 0;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 12px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .match-task-overlay-card {
+        width: 100%;
+        max-width: 560px;
+
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+
+        padding: 16px 14px;
+        border-radius: 18px;
+
+        box-sizing: border-box;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        margin: 5vh auto 0;
+    }
+
+    .match-task-overlay-title {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .match-task-overlay-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.25;
+        margin: 8px 0;
+    }
+
+    .match-task-overlay-text {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    .match-task-overlay-actions {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .match-task-overlay-button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+    /* Центруємо фінальну картку «РОЗСОРТУЙ!» */
+    #sortVictoryOverlay {
+        align-items: center;
+    }
+
+    #sortVictoryOverlay .match-task-overlay-card {
+        margin: auto;
+    }
+        /* Кнопки не виходять за межі карток на мобільному */
+    .match-task-overlay-card button {
+        box-sizing: border-box;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    #sortVictoryOverlay .fire-game-over-actions {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    #sortVictoryOverlay .fire-result-button {
+        width: 100%;
+        max-width: 340px;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+/* Компактні сповіщення у грі «Вогонь!» на телефоні */
+
+@media (max-width: 750px) {
+
+    /* «Це твій союзник!» */
+    .hit-label.warning-hit-label {
+        font-size: 0.85rem;
+        line-height: 1.2;
+
+        padding: 7px 12px;
+        border-width: 2px;
+
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    /* «Обережно! Це нейтральна країна!» */
+    .fire-message.hit-neutral {
+        text-align: center;
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
+    }
+        /* Усі повідомлення у «Вогні!» на мобільному */
+    .fire-message {
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
+
+        text-align: center;
+        white-space: normal;
+        line-height: 1.25;
+    }
+}
+/* Фінальний екран «Вогонь!» на мобільних пристроях */
+
+@media (max-width: 750px) {
+
+    .fire-game-over {
+        position: absolute;
+        inset: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .fire-game-over-card {
+        width: 100%;
+        max-width: 420px;
+
+        max-height: min(
+            calc(100% - 20px),
+            calc(100dvh - 24px)
+        );
+
+        margin: 0 auto;
+        padding: 18px 16px;
+
+        border-radius: 20px;
+        box-sizing: border-box;
+
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .fire-game-over-title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .fire-game-over-score {
+        font-size: 1.05rem;
+        line-height: 1.3;
+        margin-bottom: 14px;
+    }
+
+    .fire-game-over-actions {
+        gap: 8px;
+    }
+
+    .fire-result-button {
+        width: 100%;
+        min-height: 46px;
+
+        padding: 7px 12px;
+        border-radius: 14px;
+
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .result-button-icon {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+
+        font-size: 1rem;
+    }
+}
+/* Центрування повідомлень переходу в «Три в ряд» */
+@media (max-width: 750px) {
+
+    #matchTaskOverlay.match-task-completion {
+        align-items: center;
+    }
+
+    #matchTaskOverlay.match-task-completion
+    .match-task-overlay-card {
+        margin: auto;
+    }
+}
+/* Повідомлення не зсуває поле в «РОЗСОРТУЙ!» на мобільному */
+
+@media (max-width: 850px) {
+    .sort-status-message {
+        position: relative;
+
+        width: fit-content;
+        min-width: 65%;
+        max-width: 92%;
+        height: 5.2em;
+
+        margin: 10px auto;
+        padding: 6px 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+        font-size: 0.85rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
+/* Компактніша кнопка гілки лише на мобільних */
+@media (max-width: 750px) {
+    .game-topbar .sort-branch-help-button {
+        box-sizing: border-box;
+        width: 54px;
+        min-width: 54px;
+        height: 30px;
+        min-height: 30px;
+        padding: 2px 5px;
+        gap: 3px;
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+
+    .game-topbar .sort-branch-help-button > span {
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+
+    .game-topbar .sort-branch-help-button > b {
+        font-size: 0.8rem;
+        line-height: 1;
+    }
+}
+/* Лічильники 5-го рівня не виходять за край мобільного екрана */
+@media (max-width: 650px) {
+
+    .sort-board.sort-level-five
+    .sort-branch-left .sort-branch-count {
+        top: 40%;
+        left: auto;
+        right: calc(100% - 38px);
+    }
+
+    .sort-board.sort-level-five
+    .sort-branch-right .sort-branch-count {
+       top: 40%;
+       left: calc(100% - 38px);
+        right: auto;
+    }
+}
+/* П'ятий рівень: більше місця біля довідника */
+@media (min-width: 851px) {
+    .sort-board.sort-level-five {
+        transform: translateX(22px);
+    }
+}
+/* Авторство на стартовому екрані */
+.creator-credit {
+    margin: 20px 0 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    color: #6b7280;
+    text-align: center;
+}
