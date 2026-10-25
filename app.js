@@ -3666,6 +3666,7 @@ function updatePlayer() {
 }
 
 
+
 // Клавіатурне керування іграми
 function isAnyGameScreenVisible() {
     return Array.from(
@@ -3755,6 +3756,106 @@ let aimX = 0;
 let aimY = 0;
 let hasAim = false;
 
+// Сенсорне переміщення Німеччини на телефоні
+let playerTouchDrag = null;
+
+playerBall.addEventListener("pointerdown", event => {
+    if (
+        !window.matchMedia("(max-width: 750px)").matches ||
+        fireGameOver
+    ) {
+        return;
+    }
+
+    playerTouchDrag = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startPlayerX: playerX,
+        moved: false
+    };
+
+    movingLeft = false;
+    movingRight = false;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    playerBall.setPointerCapture(event.pointerId);
+});
+
+playerBall.addEventListener("pointermove", event => {
+    if (
+        !playerTouchDrag ||
+        event.pointerId !== playerTouchDrag.pointerId
+    ) {
+        return;
+    }
+
+    const fieldWidth = fireField.clientWidth;
+
+    if (fieldWidth <= 0) {
+        return;
+    }
+
+    const deltaX = event.clientX - playerTouchDrag.startX;
+
+    if (Math.abs(deltaX) > 4) {
+        playerTouchDrag.moved = true;
+    }
+
+    playerX = Math.max(
+        7,
+        Math.min(
+            93,
+            playerTouchDrag.startPlayerX +
+                (deltaX / fieldWidth) * 100
+        )
+    );
+
+    event.preventDefault();
+    event.stopPropagation();
+});
+
+function finishPlayerTouchDrag(event) {
+    if (
+        !playerTouchDrag ||
+        event.pointerId !== playerTouchDrag.pointerId
+    ) {
+        return;
+    }
+
+    const wasMoved = playerTouchDrag.moved;
+    playerTouchDrag = null;
+
+    // Не допускаємо пострілу після перетягування кульки
+    if (wasMoved) {
+        const suppressClick = clickEvent => {
+            if (
+                clickEvent.target === playerBall ||
+                playerBall.contains(clickEvent.target)
+            ) {
+                clickEvent.preventDefault();
+                clickEvent.stopImmediatePropagation();
+            }
+        };
+
+        fireField.addEventListener(
+            "click",
+            suppressClick,
+            { capture: true, once: true }
+        );
+    }
+}
+
+playerBall.addEventListener(
+    "pointerup",
+    finishPlayerTouchDrag
+);
+
+playerBall.addEventListener(
+    "pointercancel",
+    finishPlayerTouchDrag
+);
 
 fireField.addEventListener("mousemove", (event) => {
 
